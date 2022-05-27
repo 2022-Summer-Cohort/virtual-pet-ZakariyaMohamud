@@ -1,3 +1,5 @@
+package virtual_pet;
+
 public class VirtualPet {
     private String name;
     private int hungerLevel;
@@ -27,7 +29,7 @@ public class VirtualPet {
         return boredomLevel;
     }
 
-   public void showGrade() {
+   public void showStatus() {
       System.out.println("Im " + getName() + "Im  " + getHungerLevel() +
                "Im " + getThirstLevel() + "Im " + getBoredomLevel());
     }
@@ -47,5 +49,11 @@ public class VirtualPet {
         hungerLevel++;
         thirstLevel++;
         boredomLevel++;
+    }
+    public boolean isAlive() {
+        if (hungerLevel > 9 || thirstLevel > 9 || boredomLevel > 9) {
+            return false;
+        }
+        return true;
     }
 }
