@@ -30,8 +30,8 @@ public class VirtualPet {
     }
 
    public void showStatus() {
-      System.out.println("Im " + getName() + "Im  " + getHungerLevel() +
-               "Im " + getThirstLevel() + "Im " + getBoredomLevel());
+      System.out.println("Im " + getName() + " Im  " + getHungerLevel() +
+               " Im " + getThirstLevel() + " Im " + getBoredomLevel());
     }
 
     public void feed() {

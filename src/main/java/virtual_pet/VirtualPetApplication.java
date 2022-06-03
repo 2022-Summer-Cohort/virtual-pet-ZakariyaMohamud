@@ -1,25 +1,28 @@
 package virtual_pet;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class VirtualPetApplication {
 
     public static void main(String[] args) {
-        VirtualPet santa = new VirtualPet("Santa", 5 , 5,5);
+        VirtualPet dog1 = new VirtualPet("Maddog", 5 , 5,5);
+        VirtualPetShelter pets = new VirtualPetShelter();
+        pets.admitPet(dog1);
         Scanner input = new Scanner(System.in);
-        while (santa.isAlive()) {
-            santa.showStatus();
+        while (pets.areAlive()) {
+            pets.showAllPetStatus();
             System.out.println("Enter selection: Feed|Water|Play|Quit");
             String userSelection = input.nextLine();
             switch (userSelection.toLowerCase()){
                 case "feed":
-                    santa.feed();
+                    pets.feedAll();
                     break;
                 case "water":
-                    santa.watered();
+                    pets.wateredAll();
                     break;
                 case "play":
-                    santa.played();
+                    pets.playAll();
                     break;
                 case "quit":
                     System.exit(0);
@@ -28,7 +31,7 @@ public class VirtualPetApplication {
                     System.out.println("invalid choice");
 
             }
-            santa.tick();
+            pets.tick();
 
         }
         //Interact with a virtual_pet.VirtualPet object in this method
