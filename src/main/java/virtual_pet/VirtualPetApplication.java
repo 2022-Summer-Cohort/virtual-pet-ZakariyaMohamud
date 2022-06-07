@@ -12,7 +12,7 @@ public class VirtualPetApplication {
         Scanner input = new Scanner(System.in);
         while (pets.areAlive()) {
             pets.showAllPetStatus();
-            System.out.println("Enter selection: Feed|Water|Play|Adopt|Quit");
+            System.out.println("Enter selection: Feed|Water|Play|Adopt|Admit|Quit");
             String userSelection = input.nextLine();
             switch (userSelection.toLowerCase()){
                 case "feed":
@@ -27,10 +27,16 @@ public class VirtualPetApplication {
                 case "quit":
                     System.exit(0);
                     break;
+                case "admit":
+                    System.out.println("What pet would you like to admit?");
+                    String name = input.nextLine();
+                    pets.admitPet(new VirtualPet(name,5,5,5));
+                    break;
                 case "adopt":
                     System.out.println("Which pet would you like to adopt?");
-                    String name = input.nextLine();
-                    pets.adoptPet(name);
+                    String name1 = input.nextLine();
+                    pets.adoptPet(name1);
+                    break;
                 default:
                     System.out.println("invalid choice");
 
