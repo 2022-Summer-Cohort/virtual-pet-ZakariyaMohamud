@@ -12,16 +12,18 @@ public class VirtualPetShelterTest {
         underTest.feedAll();
         Assertions.assertEquals(0, underTest.getAPet(0).getHungerLevel());
     }
+
     @Test
     public void ThirstShouldDecreaseWhenWateredAll() {
         VirtualPetShelter underTest = new VirtualPetShelter();
         underTest.wateredAll();
         Assertions.assertEquals(0, underTest.getAPet(2).getThirstLevel());
     }
+
     @Test
     public void BoredomLevelShouldDecreaseWhenPlayAll() {
         VirtualPetShelter underTest = new VirtualPetShelter();
         underTest.playAll();
-        Assertions.assertEquals(0,underTest.getAPet(1).getBoredomLevel());
+        Assertions.assertEquals(0, underTest.getAPet(1).getBoredomLevel());
     }
 }

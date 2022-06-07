@@ -15,6 +15,18 @@ public class VirtualPetShelter {
         shelter.add(new VirtualPet("Rolland", 2, 4, 5));
         shelter.add(new VirtualPet("Husky", 3, 5, 2));
     }
+    public void adoptPet(String name) {
+            shelter.remove(findByName(name));
+    }
+    public VirtualPet findByName(String name) {
+        for (VirtualPet pet : shelter) {
+            if (pet.getName().equalsIgnoreCase(name)) {
+                return pet;
+            }
+        }
+        return null;
+    }
+
 
     public void admitPet(VirtualPet pet) {
         shelter.add(pet);
