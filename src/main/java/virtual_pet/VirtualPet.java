@@ -1,10 +1,10 @@
 package virtual_pet;
 
-public class VirtualPet {
+public abstract class VirtualPet {
     private String name;
     private int hungerLevel;
     private int thirstLevel;
-    private int boredomLevel;
+    protected int boredomLevel;
 
     public VirtualPet(String name, int hungerLevel, int thirstLevel, int boredomLevel) {
         this.name = name;
@@ -29,10 +29,7 @@ public class VirtualPet {
         return boredomLevel;
     }
 
-   public void showStatus() {
-      System.out.println("Im " + getName() + " Im  " + getHungerLevel() +
-               " Im " + getThirstLevel() + " Im " + getBoredomLevel());
-    }
+    public abstract void showStatus();
 
     public void feed() {
         hungerLevel = 0;
@@ -43,13 +40,15 @@ public class VirtualPet {
     }
 
     public void played() {
-        boredomLevel = 0;
+        boredomLevel= 0;
     }
+
     public void tick() {
         hungerLevel++;
         thirstLevel++;
         boredomLevel++;
     }
+
     public boolean isAlive() {
         if (hungerLevel > 9 || thirstLevel > 9 || boredomLevel > 9) {
             return false;
